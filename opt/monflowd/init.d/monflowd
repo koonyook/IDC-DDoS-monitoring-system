@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+#
+# monflowd      This shell script takes care of starting and stopping
+#               the Monitoring NetFlow Daemon (monflowd).
+#
+# chkconfig: 345 99 01
+# description:  This daemon gather recent traffic data from NetFlow (cor-bkkcbw33, cor-bkkcbw34)
+#		and send to a database on another server about every 1 minute.
+# processname: monflowd
+# pidfile: /var/run/monflowd.pid
+
+import sys, time
+
+#print sys.path
+
+sys.path.append("/opt/monflowd/lib")
+import setting
+
+from myDaemon import monflowd
+
+if __name__ == "__main__":
+	#print "hello"
+	#print sys.argv
+	if len(sys.argv) >=2:
+		if sys.argv[-1]=='debug':
+			isDebugMode=True
+		else:
+			isDebugMode=False
+
+		logFile=setting.LOG_PATH+'monflowd.log'
+
+		d = monflowd('/var/run/monflowd.pid','monflowd',stdout=logFile,stderr=logFile,isDebugMode=isDebugMode)
+		
+		if 'start' == sys.argv[1]:
+			#d.waitLocalPort()
+			d.start()
+		elif 'stop' == sys.argv[1]:
+			d.stop()
+		elif 'restart' == sys.argv[1]:
+			d.stop()
+			#d.waitLocalPort()
+			d.start()
+		elif 'status' == sys.argv[1]:
+			d.status()
+		elif 'clearlog' == sys.argv[1]:
+			open(logFile,'w').close()
+		else:
+			print "Unknown command"
+			sys.exit(2)
+		sys.exit(0)
+	else:
+		print "usage: monflowd {start|stop|restart|status|clearlog} [debug]"
+		sys.exit(2)

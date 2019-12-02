@@ -1,0 +1,71 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+div.button_container {
+	
+}
+
+div.summary_container {
+	padding-right:5px;
+	padding-top:2px;
+	padding-left:5px;
+	border-style:solid;
+	border-width:thin;
+	border-color:#000;
+}
+
+div.quick_interface_name {
+	font-size:small;
+}
+
+div.traffic_timestamp {
+	font-size:small;
+}
+
+
+div.gauge_container {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction:normal;
+	margin-top:5px;
+}
+
+div.gauge_column {
+	padding-left:3px;
+	text-align:right;
+}
+
+div.info_container {
+	-webkit-box-flex:1.0;
+	padding-top:5px;
+}
+
+div.info_row {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction:normal;
+	padding-left:10px;
+}
+
+div.ip_container {
+	width: 89%;
+	height: 30px;
+	overflow-y: scroll;
+}
+
+.add_margin {
+	margin-right:8px;	
+}
+
+input.add_remove_button{
+	width:100px;
+	height:100px;
+	font-size:72px;
+	font-weight:bolder;
+}
+
+div.colored_square{
+	width:15px;
+	height:15px;
+	margin-top:5px;
+}

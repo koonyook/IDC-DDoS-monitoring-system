@@ -1,0 +1,75 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+div#searchbox {
+	z-index:10;
+	position:absolute;
+	top:0px;
+	left:0px;
+
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+
+	text-align:left;
+
+	background-color:#DCE3CC;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	
+}
+
+#searchinput {
+	position:relative;
+	top:1px;
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+#backbutton {
+	margin:3px;
+
+	cursor:pointer;
+}
+
+#searchbutton {
+	z-index:9;
+	position:absolute;
+	top:0px;
+	left:0px;
+	
+	background-color:#DCE3CC;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	padding:3px;
+	text-align:left;
+
+	cursor:pointer;
+}
+
+#topIPButton {
+	z-index:9;
+	position:absolute;
+	top:35px;
+	left:0px;
+	
+	background-color:#DCE3CC;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	padding:3px;
+	text-align:left;
+
+	cursor:pointer;
+}
+
+#feedbackbutton {
+	z-index:9;
+	position:absolute;
+	top:70px;
+	left:0px;
+	
+	background-color:#DCE3CC;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	padding:3px;
+	text-align:left;
+
+	cursor:pointer;
+}
+

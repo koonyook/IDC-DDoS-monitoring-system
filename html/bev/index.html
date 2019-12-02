@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-ui.js" type="text/javascript"></script>
+<script src="jquery.ui.timepicker.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="jquery.ui.timepicker.css">
+<script src="jquery.colorbox.js" type="text/javascript"></script>
+<link rel="stylesheet" href="colorbox.css" />
+
+<script src="main.js" type="text/javascript"></script>
+<script src="util.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="section.css">
+<link rel="stylesheet" type="text/css" href="option.css">
+<link rel="stylesheet" type="text/css" href="detail.css">
+<link rel="stylesheet" type="text/css" href="watchList.css">
+<link rel="stylesheet" type="text/css" href="helpbox.css">
+<link rel="stylesheet" type="text/css" href="leftbox.css">
+<link rel="stylesheet" type="text/css" href="rightPanel.css">
+
+<link href="jquery.loadmask.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.loadmask.min.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<title>Bird's-Eye View</title>
+</head>
+
+<body style="height:100%; margin:0;">
+
+<div id="section" align="left"> 
+	<div id="top_bar">
+		
+		<div class="group_column">
+			<div class="column">
+				<input class="seek_button" id="seek_right_button2" name="seek_right" type="button" value=">" />
+			</div>
+			<div class="column timeslot" align="center">
+				<div class="cal_row" align="left">
+					<input type="text" id="datepicker2" value="09/11/2013" class="noType dateDisplay" readonly />
+				</div>
+				<div class="cal_row"	align="left">
+					<input type="text" id="timepicker2" value="08.50" class="noType timeDisplay" readonly />
+					<div id="timepicker_button2" class="timepicker_button_trigger" ></div>
+				</div>
+
+				<input id="selectedTime2" class="optionTrigger" type="hidden" name="selectedTime2" value="-1" />
+			</div>
+			<div class="column">
+				<input class="seek_button" id="seek_left_button2" name="seek_left" type="button" value="<"/>
+			</div>
+		</div>
+		
+		<div class="group_column">
+			<div class="column">
+				<input class="seek_button" id="seek_right_button" name="seek_right" type="button" value=">" />
+			</div>
+			<div class="column timeslot" align="center">
+				<div class="cal_row" align="left">
+					<input type="text" id="datepicker" value="09/11/2013" class="noType dateDisplay" readonly />
+				</div>
+				<div class="cal_row"	align="left">
+					<input type="text" id="timepicker" value="08.50" class="noType timeDisplay" readonly />
+					<div id="timepicker_button" class="timepicker_button_trigger" ></div>
+				</div>
+				
+				
+				<input id="selectedTime" class="optionTrigger" type="hidden" name="selectedTime" value="-1" />
+			</div>
+			<div class="column">
+				<input class="seek_button" id="seek_left_button" name="seek_left" type="button" value="<"/>
+			</div>
+		</div>
+
+		<div id="option" align="left">
+		
+			<div class="group_column">
+				<div class="column">
+					<strong class="option_name">Level</strong>
+					<br />
+					
+				</div>
+				<div class="column">  
+					<label><input class="optionTrigger" type="radio" name="level" value="all" id="level_0"  checked />All</label>
+					<br />
+					<label><input class="optionTrigger" type="radio" name="level" value="distribute" id="level_2"  />Distribute</label>
+				</div>
+				<div class="column">  
+					<label><input class="optionTrigger" type="radio" name="level" value="core" id="level_3"  />Core</label>
+					<br />
+					<label><input class="optionTrigger" type="radio" name="level" value="access" id="level_1"/>Access</label>
+				</div>
+			</div>  
+			
+			<div class="group_column">
+				<div class="column">
+					<strong class="option_name">Group by</strong>
+				</div>
+				<div class="column">  
+					<label><input class="optionTrigger" type="radio" name="group" value="source" id="group_0" checked />Source</label>
+					<br />
+					<label><input class="optionTrigger" type="radio" name="group" value="destination" id="group_1" />Destination</label>
+				</div>
+			</div> 
+			
+			<div class="group_column">
+				<div class="column">
+					<label><input class="optionTrigger" name="filter" type="checkbox" value="filter" />Filter direction</label>
+					<br />
+					<label><input class="optionTrigger" name="showGroupName" type="checkbox" value="showGroupName" />Show group name</label>
+				</div>
+				<div class="column">
+					<label><input class="optionTrigger" name="showRedLink" type="checkbox" value="showRedLink" checked />Show red link</label>
+					<br />
+					<label><input class="optionTrigger" name="showBlink" type="checkbox" value="showBlink" checked />Show incident</label>
+				</div>
+			</div>
+			
+			<div class="group_column">
+				<div class="column">
+					<strong class="option_name">Time</strong>
+				</div>
+				<div class="column">  
+					<label><input class="optionTrigger" type="radio" name="time" value="0" id="time_0" checked />Last Update</label>
+					<br />
+					<label><input class="optionTrigger" type="radio" name="time" value="1" id="time_1" />History</label>
+				</div>
+			</div> 
+			
+			<div class="group_column">
+				<div class="column">
+					<div id="status" style="display:none">Status/Debugging area</div>
+				</div>
+			</div>
+			
+		</div> 
+		
+	</div>
+		  
+	<div id="canvasContainer" align="center">
+		<h1><div id="lastUpdateTime">__:__</div></h1>
+		
+		<div id="rightPanel" class="rightPanel" style="display:none;">
+			<div id="hindButton" onclick=" $('#rightPanel').hide( 'slide',{direction: 'right'}); "> >> </div>
+			<div id="incidentHeader">New Incident</div>
+			<div id="incidentList"><div id="template_incident_container" class="incident_container">
+					<div id="template_incident_timestamp" class="incident_timestamp">9/16/2013 3:04:38 PM</div>
+					<div id="template_incident_subject" class="incident_subject">bandwidth reached 80%</div>
+					<div id="template_incident_detail" class="incident_detail">ส่วนนี้เป็นรายละเอียดนะครับ ทดสอบ ทดสอบ ทดสอบ จะขึ้นบรรทัดใหม่หรือเปล่า I want to test text warping.</div>
+					<div id="template_incident_together" class="incident_together"></div>
+					<div align="right"><input id="template_incident_button" class="incident_button" type="button" value="acknowledge" /></div>	
+				</div></div>
+		</div>
+
+		<div id="searchbutton" onclick="$('#searchbox').show( 'slide',{direction: 'left'}); $('#searchinput').focus();"><img src="images/search.png"  /></div>
+
+		<div id="searchbox" style="display:none;">
+			<input id="searchinput" type="text" value="" onkeypress="return checkSearchSubmit(event); "/>
+			<div id="backbutton" onclick="$('#searchbox').hide( 'slide',{direction: 'left'}); s.searchGroup=[];"><img src="images/back.png" width="26" height="26" /></div>
+		</div>
+
+		<div id="topIPButton" >
+			<a title="Top-usage IP" href="topip.html" target="_blank">
+				<img src="images/chart.png" width="26" height="26" />
+			</a>
+		</div>
+
+		<div id="feedbackbutton" >
+			<a title="feedback" href="https://docs.google.com/forms/d/1jkiOCny81cxmZltfl7wSTiAHjCVbKgh3-OOYaytweZI/viewform" target="_blank">
+				<img src="images/feedback.png" width="26" height="26" />
+			</a>
+		</div>
+
+
+		<div id="helpbox">
+			<div id="zero" class="miniMargin">0%</div>
+			<div id="gradientBar" class="miniMargin"></div>
+			<div id="hundred" class="miniMargin">100%</div>
+			<div id="Div1" class="miniMargin" style="display:none"><input type="button" value="X" onclick=" $('#rightPanel').show( 'slide',{direction: 'right'}); " /></div>
+		</div>
+		<canvas id="canvas1">
+			This text is displayed if your browser does not support HTML5 Canvas.
+		</canvas>
+	</div>
+		
+	<div id="preview_detail">
+		<div class="button_container">
+			<input id="preview_add_button" class="add_remove_button" name="add" type="button" value="+"/>
+		</div>
+		<div class="summary_container">
+			<div class="important_container" align="right">
+				<div id="preview_path" class="path">() -> ()</div>
+				<div id="preview_quick_interface_name" class="quick_interface_name">-</div>
+				<div id="preview_traffic_timestamp" class="traffic_timestamp">-</div>
+			</div>
+			<div class="gauge_container">
+				<div class="gauge_column" style="margin-left:10px">
+					<div>IN</div>
+					<div>OUT</div>
+				</div>
+				<div class="gauge_column extendable">
+					<div id="preview_inbound_traffic">- Mbps</div>
+					<div id="preview_outbound_traffic">- Mbps</div>
+				</div>
+				<div class="gauge_column" style="margin-left:10px">
+					<div id="preview_inbound_percent">-%</div>
+					<div id="preview_outbound_percent">-%</div>
+				</div>
+				<div class="gauge_column">
+					<div id="preview_inbound_color" class="colored_square" style="background-color:#FFF"></div>
+					<div id="preview_outbound_color" class="colored_square" style="background-color:#FFF"></div>
+				</div>
+			</div>
+		</div>
+		<div class="info_container">
+			<div class="info_row">
+				<div id="preview_node_name" class="add_margin">-</div>
+				<div id="preview_interface_name" class="add_margin">-</div>
+				<label class="add_margin">to</label>
+				<div id="preview_target_name">-</div>
+				<div id="preview_location_name">-</div>
+			</div>
+			<div class="info_row">
+				<label class="add_margin">Description:</label>
+				<div id="preview_description">-</div>
+			</div>
+			<div class="info_row">
+				<label class="add_margin">Customer: </label>
+				<div id="preview_customer">-</div>
+			</div>
+			<div class="info_row">
+				<label class="add_margin">Address:</label>
+				<div id="preview_ip" class="ip_container">-</div>
+			</div>
+			
+		</div>
+	</div>
+    
+</div>
+
+<div id="watchContainer" align="left">
+	<div id="watchHeader">
+		<h1>Watch List</h1>
+		<input id="clear_button" name="clear" type="button" value="clear watch list"/>
+	</div>
+	<div id="watchList" align="left">
+				
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	
+	//if(1==1)
+	//	console.log("end");
+	//else
+	if (! /chrom(e|ium)/.test(navigator.userAgent.toLowerCase())) {
+		$("body").mask("This application supports Chrome browser only; please change your browser.");
+	}
+	else {
+		$(function () {
+			$("#datepicker").datepicker({
+				showOn: "button",
+				buttonImage: "images/calendar.gif",
+				buttonImageOnly: true,
+				dateFormat: 'dd/mm/yy',
+				onClose: function (time, inst) {
+					dateStr = $("#datepicker").val();
+					var d = new Date(
+						Number(dateStr.split('/')[2]),
+						Number(dateStr.split('/')[1]) - 1,
+						Number(dateStr.split('/')[0]),
+						$('#timepicker').timepicker('getHour'),
+						$('#timepicker').timepicker('getMinute'),
+						0,
+						0);
+					$("#selectedTime").val((Math.floor(d.getTime() / 1000))).trigger('change');
+				}
+			});
+		});
+
+		$(function () {
+			$("#datepicker2").datepicker({
+				showOn: "button",
+				buttonImage: "images/calendar.gif",
+				buttonImageOnly: true,
+				dateFormat: 'dd/mm/yy',
+				onClose: function (time, inst) {
+					dateStr = $("#datepicker2").val();
+					var d = new Date(
+						Number(dateStr.split('/')[2]),
+						Number(dateStr.split('/')[1]) - 1,
+						Number(dateStr.split('/')[0]),
+						$('#timepicker2').timepicker('getHour'),
+						$('#timepicker2').timepicker('getMinute'),
+						0,
+						0);
+					$("#selectedTime2").val((Math.floor(d.getTime() / 1000))).trigger('change');
+				}
+			});
+		});
+
+		$(function () {
+			$("#timepicker").timepicker({
+				showOn: "button",
+				button: "#timepicker_button",
+				onClose: function (time, inst) {
+					dateStr = $("#datepicker").val();
+					var d = new Date(
+						Number(dateStr.split('/')[2]),
+						Number(dateStr.split('/')[1]) - 1,
+						Number(dateStr.split('/')[0]),
+						$('#timepicker').timepicker('getHour'),
+						$('#timepicker').timepicker('getMinute'),
+						0,
+						0);
+					$("#selectedTime").val((Math.floor(d.getTime() / 1000))).trigger('change');
+				}
+			});
+		});
+
+		$(function () {
+			$("#timepicker2").timepicker({
+				showOn: "button",
+				button: "#timepicker_button2",
+				onClose: function (time, inst) {
+					dateStr = $("#datepicker2").val();
+					var d = new Date(
+						Number(dateStr.split('/')[2]),
+						Number(dateStr.split('/')[1]) - 1,
+						Number(dateStr.split('/')[0]),
+						$('#timepicker2').timepicker('getHour'),
+						$('#timepicker2').timepicker('getMinute'),
+						0,
+						0);
+					$("#selectedTime2").val((Math.floor(d.getTime() / 1000))).trigger('change');
+				}
+			});
+		});
+
+		//delay to prevent sudden resizing on the first time
+		setTimeout(first_init, 500);
+	}
+</script>
+
+</body>
+</html>

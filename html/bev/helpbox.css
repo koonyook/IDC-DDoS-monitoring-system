@@ -1,0 +1,47 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.miniMargin {
+	margin-right:5px;
+}
+
+div#helpbox {
+	position:absolute;
+	top:15px;
+	left:40px;
+	
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+
+	text-align:left;
+}
+
+div#zero {
+	position:relative;
+	top:0;
+	left:0;
+}
+
+div#gradientBar {
+		width:400px;
+		height:20px;
+		
+		background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(0.00, #FFFFFF),
+		color-stop(0.50, #FFFF00),
+		color-stop(1.00, #FF0000)
+	);
+	
+}
+
+div#hundred {
+	position:relative;
+	top:0;
+	left:0;
+	text-align:left;
+}
+

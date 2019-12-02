@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+div#section {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	width: 100%;
+	height:100%;
+	background-color:#096;
+}
+
+div#top_bar {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction:reverse;
+	width: 100%;
+	height:50px;
+	background-color:#FF0;
+}
+
+div#canvasContainer {
+	-webkit-box-flex:1.0;
+	width: 100%;
+	background-color:#096;
+
+	position: relative;
+}
+
+div#preview_detail {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction:reverse;
+	width: 100%;
+	height:100px;
+	background-color:#ADD8E6;
+}
+
+canvas#canvas1 {
+	width: 100%;
+	height: 100%;
+}
+
+.extendable {
+	-webkit-box-flex:1.0;
+}

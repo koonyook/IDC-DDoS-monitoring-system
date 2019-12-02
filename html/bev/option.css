@@ -1,0 +1,80 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+div.timeslot {
+	width:95px;
+}
+
+input.noType {
+	font-size:14px;
+	width:73px; 
+	border:none; 
+	background:none;
+}
+
+div.ui-datepicker{
+	font-size:10px;
+}
+
+div.ui-timepicker {
+	font-size:10px;
+}
+div.dateDisplay {
+	padding-left:5px;
+}
+
+div.timepicker_button_trigger {
+	width: 16px; 
+	height:16px; 
+	background: url(images/ui-icons_222222_256x240.png) -80px, -96px;
+                    
+	display: inline-block; 
+	border-radius: 2px; 
+	border: 1px solid #222222; 
+	cursor:pointer
+}
+
+div.timeDisplay {
+	padding-right:2px;
+}
+
+div.cal_row {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction:normal;
+}
+
+img.ui-datepicker-trigger {
+	padding-left:5px;
+}
+
+input.seek_button {
+	height: 40px;
+}
+
+div#option {
+	display: -webkit-box;
+	-webkit-box-flex:1.0;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction:normal;
+}
+
+div.group_column {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	border-style:solid;
+	border-width:thin;
+	border-color:#000;
+	padding-top:3px;
+	padding-right:5px;
+	/*background-color:#FCC;*/
+}
+
+div.column {
+	padding-left:5px;
+	
+}
+
+strong.option_name {
+	padding-left:5px;
+}

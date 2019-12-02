@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-ui.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui.css" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<title>Bird's-Eye View [TOOLS]</title>
+</head>
+	
+<body>
+<input  id="update_button" class="I_am_a_button" name="update_button" type="button" value="Update Equipments&Ports form CNSMon & topologyDB" />
+<input  id="vlan_button" class="I_am_a_button" name="vlan_button" type="button" value="Update VLAN setting from snmpwalk" />
+<div id="status"></div>
+<img id="runner" style="display:none" src="./images/ajax-loader.gif" ></img>
+<script type="text/javascript">
+	$("#update_button").bind("click", function () {
+		$(".I_am_a_button").attr("disabled", "disabled");
+		$("#status")[0].innerHTML = "This action takes several minutes, please wait... (You cannot use the system during this update.)";
+		$("#runner").attr("style", "display:block");
+		$.getJSON('http://203.146.64.37:8080/tool/updateFromCNSMON/').done(
+				function (json) {
+					$("#status")[0].innerHTML = "Finished updating";
+					$("#runner").attr("style", "display:none");
+				}
+			)
+			.fail(function (jqxhr, textStatus, error) {
+				var err = textStatus + ', ' + error;
+				console.log("Request Failed1: " + err);
+				$("#status")[0].innerHTML = "Updating error";
+				$("#runner").attr("style", "display:none");
+			});
+	});
+
+	$("#vlan_button").bind("click", function () {
+		$(".I_am_a_button").attr("disabled", "disabled");
+		$("#status")[0].innerHTML = "This action takes several minutes, please wait... (Using the system during this update may provide you wrong info.)";
+		$("#runner").attr("style", "display:block");
+		$.getJSON('http://203.146.64.37:8080/tool/updateVLAN/').done(
+				function (json) {
+					$("#status")[0].innerHTML = "Finished updating";
+					$("#runner").attr("style", "display:none");
+				}
+			)
+			.fail(function (jqxhr, textStatus, error) {
+				var err = textStatus + ', ' + error;
+				console.log("Request Failed1: " + err);
+				$("#status")[0].innerHTML = "Updating error";
+				$("#runner").attr("style", "display:none");
+			});
+	});
+
+</script>
+
+</body>
+</html>
